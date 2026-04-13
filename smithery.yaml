@@ -1,0 +1,10 @@
+name: text-stats-ai-mcp
+description: "MEOK AI Labs — Text Stats tools for AI agents and LLMs"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/text-stats-ai-mcp
+license: MIT
+categories: [NLP, Analytics]
+tags: [text-statistics, readability, word-count, text-analysis, content-metrics]
+runtime: python
+entrypoint: server.py
