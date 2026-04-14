@@ -1,4 +1,9 @@
 """Text Stats AI MCP Server — Text analysis tools."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import math
 import re
 import time
@@ -20,8 +25,12 @@ def _rate_check(tool: str) -> bool:
     return True
 
 @mcp.tool()
-def word_count(text: str) -> dict[str, Any]:
+def word_count(text: str, api_key: str = "") -> dict[str, Any]:
     """Comprehensive word, character, sentence, and paragraph counting."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("word_count"):
         return {"error": "Rate limit exceeded (50/day)"}
     words = text.split()
@@ -39,8 +48,12 @@ def word_count(text: str) -> dict[str, Any]:
     }
 
 @mcp.tool()
-def reading_time(text: str, wpm: int = 238) -> dict[str, Any]:
+def reading_time(text: str, wpm: int = 238, api_key: str = "") -> dict[str, Any]:
     """Estimate reading time at given words-per-minute (default 238 adult average)."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("reading_time"):
         return {"error": "Rate limit exceeded (50/day)"}
     words = len(text.split())
@@ -68,8 +81,12 @@ def reading_time(text: str, wpm: int = 238) -> dict[str, Any]:
     }
 
 @mcp.tool()
-def keyword_density(text: str, top_n: int = 20, min_length: int = 3) -> dict[str, Any]:
+def keyword_density(text: str, top_n: int = 20, min_length: int = 3, api_key: str = "") -> dict[str, Any]:
     """Analyze keyword frequency and density in text."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("keyword_density"):
         return {"error": "Rate limit exceeded (50/day)"}
     words = [w.lower().strip(".,!?;:\"'()[]{}") for w in text.split()]
@@ -91,8 +108,12 @@ def keyword_density(text: str, top_n: int = 20, min_length: int = 3) -> dict[str
     return {"keywords": keywords, "bigrams": top_bigrams, "total_words": total, "unique_words": len(set(filtered))}
 
 @mcp.tool()
-def sentiment_score(text: str) -> dict[str, Any]:
+def sentiment_score(text: str, api_key: str = "") -> dict[str, Any]:
     """Basic sentiment analysis using lexicon-based scoring."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _rate_check("sentiment_score"):
         return {"error": "Rate limit exceeded (50/day)"}
     positive = {"good", "great", "excellent", "amazing", "wonderful", "fantastic", "love", "happy",

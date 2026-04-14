@@ -1,23 +1,76 @@
 {
   "name": "text-stats-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Text Stats tools for AI agents and LLMs",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/text-stats-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "MCP server for text analysis tools.",
+  "version": "1.0.0",
   "tools": [
-    "word_count",
-    "reading_time",
-    "keyword_density",
-    "sentiment_score"
-  ],
-  "categories": [
-    "NLP",
-    "Analytics"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "word_count",
+      "description": "Comprehensive word, character, sentence, and paragraph counting.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "reading_time",
+      "description": "Estimate reading time at given words-per-minute (default 238 adult average).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "wpm": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "keyword_density",
+      "description": "Analyze keyword frequency and density in text.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "top_n": {
+            "type": "integer"
+          },
+          "min_length": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "sentiment_score",
+      "description": "Basic sentiment analysis using lexicon-based scoring.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    }
+  ]
 }

@@ -1,10 +1,38 @@
 name: text-stats-ai-mcp
-description: "MEOK AI Labs — Text Stats tools for AI agents and LLMs"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/text-stats-ai-mcp
-license: MIT
-categories: [NLP, Analytics]
-tags: [text-statistics, readability, word-count, text-analysis, content-metrics]
-runtime: python
-entrypoint: server.py
+description: MCP server for text analysis tools.
+version: 1.0.0
+tools:
+- name: word_count
+  description: Comprehensive word, character, sentence, and paragraph counting.
+  parameters:
+  - name: text
+    type: string
+    required: true
+- name: reading_time
+  description: Estimate reading time at given words-per-minute (default 238 adult
+    average).
+  parameters:
+  - name: text
+    type: string
+    required: true
+  - name: wpm
+    type: integer
+    required: false
+- name: keyword_density
+  description: Analyze keyword frequency and density in text.
+  parameters:
+  - name: text
+    type: string
+    required: true
+  - name: top_n
+    type: integer
+    required: false
+  - name: min_length
+    type: integer
+    required: false
+- name: sentiment_score
+  description: Basic sentiment analysis using lexicon-based scoring.
+  parameters:
+  - name: text
+    type: string
+    required: true
