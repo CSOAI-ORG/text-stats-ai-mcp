@@ -1,5 +1,5 @@
 name: text-stats-ai-mcp
-description: MCP server for text analysis tools.
+description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: word_count

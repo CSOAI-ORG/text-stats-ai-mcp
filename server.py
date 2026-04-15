@@ -11,7 +11,7 @@ from collections import Counter
 from typing import Any
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("text-stats-ai-mcp")
+mcp = FastMCP("text-stats-ai", instructions="MEOK AI Labs MCP Server")
 _calls: dict[str, list[float]] = {}
 DAILY_LIMIT = 50
 
