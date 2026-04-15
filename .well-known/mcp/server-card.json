@@ -1,0 +1,53 @@
+{
+  "name": "text-stats-ai",
+  "description": "Text Stats Ai tools powered by MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/text-stats-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "word_count",
+      "description": "Comprehensive word, character, sentence, and paragraph counting."
+    },
+    {
+      "name": "reading_time",
+      "description": "Estimate reading time at given words-per-minute (default 238 adult average)."
+    },
+    {
+      "name": "keyword_density",
+      "description": "Analyze keyword frequency and density in text."
+    },
+    {
+      "name": "sentiment_score",
+      "description": "Basic sentiment analysis using lexicon-based scoring."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Natural Language Processing"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
