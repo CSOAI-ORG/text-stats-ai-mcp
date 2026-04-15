@@ -1,5 +1,6 @@
 name: text-stats-ai-mcp
-description: MEOK AI Labs MCP Server
+description: MCP server for text stats ai. Features word count, reading time, keyword
+  density. From MEOK AI Labs.
 version: 1.0.0
 tools:
 - name: word_count
