@@ -7,7 +7,7 @@ from auth_middleware import check_access
 import math
 import re
 import time
-from collections import Counter
+from collections import Counter, defaultdict
 from typing import Any
 from mcp.server.fastmcp import FastMCP
 
