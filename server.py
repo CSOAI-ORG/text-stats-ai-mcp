@@ -11,6 +11,18 @@ from collections import Counter
 from typing import Any
 from mcp.server.fastmcp import FastMCP
 
+import json
+from datetime import datetime, timezone
+
+FREE_DAILY_LIMIT = 15
+_usage = defaultdict(list)
+def _rl(c="anon"):
+    now = datetime.now(timezone.utc)
+    _usage[c] = [t for t in _usage[c] if (now-t).total_seconds() < 86400]
+    if len(_usage[c]) >= FREE_DAILY_LIMIT: return json.dumps({"error": f"Limit {FREE_DAILY_LIMIT}/day"})
+    _usage[c].append(now); return None
+
+
 mcp = FastMCP("text-stats-ai", instructions="MEOK AI Labs MCP Server")
 _calls: dict[str, list[float]] = {}
 DAILY_LIMIT = 50
@@ -30,6 +42,7 @@ def word_count(text: str, api_key: str = "") -> dict[str, Any]:
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     if not _rate_check("word_count"):
         return {"error": "Rate limit exceeded (50/day)"}
@@ -53,6 +66,7 @@ def reading_time(text: str, wpm: int = 238, api_key: str = "") -> dict[str, Any]
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     if not _rate_check("reading_time"):
         return {"error": "Rate limit exceeded (50/day)"}
@@ -86,6 +100,7 @@ def keyword_density(text: str, top_n: int = 20, min_length: int = 3, api_key: st
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     if not _rate_check("keyword_density"):
         return {"error": "Rate limit exceeded (50/day)"}
@@ -113,6 +128,7 @@ def sentiment_score(text: str, api_key: str = "") -> dict[str, Any]:
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+    if err := _rl(): return err
 
     if not _rate_check("sentiment_score"):
         return {"error": "Rate limit exceeded (50/day)"}
