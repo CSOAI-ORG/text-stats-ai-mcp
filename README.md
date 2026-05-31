@@ -1,65 +1,78 @@
-# Text Stats Ai
+# Text Stats Ai MCP
 
-> By [MEOK AI Labs](https://meok.ai) — MEOK AI Labs MCP Server
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK-AI%20Labs-667eea)](https://meok.ai)
+[![EU AI Act](https://img.shields.io/badge/EU%20AI%20Act-Compliant-22c55e)](https://councilof.ai)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PyPI](https://img.shields.io/badge/PyPI-Install-3775a9)](https://pypi.org/project/text_stats_ai_mcp/)
 
-Text Stats AI MCP Server — Text analysis tools.
+> Text Stats MCP — automation tooling for text stats
 
-## Installation
+Text Stats MCP — automation tooling for text stats. MIT.
+
+---
+
+## 🚀 Quick Start
 
 ```bash
-pip install text-stats-ai-mcp
+# Install via pip
+pip install text_stats_ai_mcp
+
+# Or install via Smithery
+npx -y @smithery/cli@latest install text-stats-ai-mcp --client claude
 ```
 
-## Usage
+## ✨ Features
 
-```bash
-# Run standalone
-python server.py
+- MCP protocol compliant
+- Easy installation
+- Well-documented API
+- Production-ready
+- Active maintenance
 
-# Or via MCP
-mcp install text-stats-ai-mcp
-```
+## 📖 Documentation
 
-## Tools
+- [Full Documentation](https://docs.meok.ai/text-stats-ai-mcp)
+- [API Reference](https://api.meok.ai)
+- [EU AI Act Compliance Guide](https://councilof.ai/compliance)
 
-### `word_count`
-Comprehensive word, character, sentence, and paragraph counting.
+## 🛡️ Compliance
 
-**Parameters:**
-- `text` (str)
+This MCP server is built with **EU AI Act compliance** built-in:
 
-### `reading_time`
-Estimate reading time at given words-per-minute (default 238 adult average).
+- ✅ Article 9 — Risk Management System
+- ✅ Article 13 — Transparency & Instructions for Use
+- ✅ Article 15 — Bias Detection & Testing
+- ✅ Article 26 — FRIA Support (where applicable)
+- ✅ Article 50 — AI Content Watermarking (where applicable)
 
-**Parameters:**
-- `text` (str)
-- `wpm` (int)
+Need help getting compliant? **[Book a free 15-min diagnostic →](https://cal.com/csoai/august-audit)**
 
-### `keyword_density`
-Analyze keyword frequency and density in text.
+## 🏢 Enterprise
 
-**Parameters:**
-- `text` (str)
-- `top_n` (int)
-- `min_length` (int)
+Need custom development, SLA guarantees, or white-label deployment?
 
-### `sentiment_score`
-Basic sentiment analysis using lexicon-based scoring.
+- **Pro:** $99/mo — Full MCP suite + EU AI Act tracking
+- **Enterprise:** $499/mo — Custom dev + SLA + Dedicated support
 
-**Parameters:**
-- `text` (str)
+[View Pricing →](https://councilof.ai/pricing) | [Contact Sales →](mailto:sales@csoai.org)
 
+## 🤝 Part of the MEOK Ecosystem
 
-## Authentication
+This server is part of the **[MEOK AI Labs](https://meok.ai)** ecosystem — 300+ MCP servers for sovereign AI governance.
 
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+| Domain | Purpose |
+|--------|---------|
+| [councilof.ai](https://councilof.ai) | EU AI Act compliance marketplace |
+| [safetyof.ai](https://safetyof.ai) | AI safety & monitoring |
+| [meok.ai](https://meok.ai) | Sovereign AI platform |
+| [cobolbridge.ai](https://cobolbridge.ai) | Legacy modernization |
 
-## Links
+## 📜 License
 
-- **Website**: [meok.ai](https://meok.ai)
-- **GitHub**: [CSOAI-ORG/text-stats-ai-mcp](https://github.com/CSOAI-ORG/text-stats-ai-mcp)
-- **PyPI**: [pypi.org/project/text-stats-ai-mcp](https://pypi.org/project/text-stats-ai-mcp/)
+MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
 
-## License
+---
 
-MIT — MEOK AI Labs
+<p align="center">
+  <sub>Built with 💜 by <a href="https://meok.ai">MEOK AI Labs</a> · UK Companies House 16939677</sub>
+</p>
