@@ -1,4 +1,5 @@
-"""Text Stats AI MCP Server — Text analysis tools."""
+"""
+Text Stats AI MCP Server — Text analysis tools."""
 
 import sys, os
 from auth_middleware import check_access

@@ -1,0 +1,25 @@
+{
+  "name": "text-stats-ai-mcp",
+  "title": "Text Stats Ai Mcp",
+  "description": "MCP server for text stats ai. Features word count, reading time, keyword density. From MEOK AI Labs.",
+  "version": "1.0.5",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "word_count"
+    },
+    {
+      "name": "reading_time"
+    },
+    {
+      "name": "keyword_density"
+    },
+    {
+      "name": "sentiment_score"
+    }
+  ]
+}

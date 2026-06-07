@@ -1,0 +1,33 @@
+# text-stats-ai-mcp
+# > By [MEOK AI Labs](https://meok.ai) — MEOK AI Labs MCP Server
+
+## Install
+```bash
+pip install text-stats-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `word_count`
+Comprehensive word, character, sentence, and paragraph counting.
+
+### `reading_time`
+Estimate reading time at given words-per-minute (default 238 adult average).
+
+### `keyword_density`
+Analyze keyword frequency and density in text.
+
+### `sentiment_score`
+Basic sentiment analysis using lexicon-based scoring.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

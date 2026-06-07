@@ -1,0 +1,9 @@
+# text-stats-ai-mcp - Auto-trigger Rules
+
+When the user asks about text stats, use text-stats-ai-mcp tools: word_count, reading_time, keyword_density, sentiment_score
+
+> By [MEOK AI Labs](https://meok.ai) — MEOK AI Labs MCP Server
+
+Install: `pip install text-stats-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.
