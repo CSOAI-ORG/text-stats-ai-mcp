@@ -1,0 +1,59 @@
+{
+  "name": "text-stats-ai-mcp",
+  "description": "MCP server for text stats ai. Features word count, reading time, keyword density. From MEOK AI Labs.",
+  "url": "https://proofof.ai/scorecard/text-stats-ai-mcp.html",
+  "version": "1.0.5",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "word_count",
+      "name": "Word Count",
+      "description": "word_count via text-stats-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "reading_time",
+      "name": "Reading Time",
+      "description": "reading_time via text-stats-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "keyword_density",
+      "name": "Keyword Density",
+      "description": "keyword_density via text-stats-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "sentiment_score",
+      "name": "Sentiment Score",
+      "description": "sentiment_score via text-stats-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
